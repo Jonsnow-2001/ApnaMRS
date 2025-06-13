@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: apna-mrs
+    env: python
+    buildCommand: ./setup.sh && pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port=$PORT
