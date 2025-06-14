@@ -95,7 +95,8 @@ st.title('🎬 Apna Movie Recommender ')
 
 # Movie select box
 st.markdown('<div class="custom-label">Select the movie name to recommend similar movies:</div>', unsafe_allow_html=True)
-selected_movie_name = st.selectbox("", movies_list['title'].values, index=0, key="movie_select")
+selected_movie_name = st.selectbox("Select a movie", movies_list['title'].values, label_visibility="collapsed")
+
 
 # Recommend button
 if st.button("🎯 Recommend"):
