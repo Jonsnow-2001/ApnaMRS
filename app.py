@@ -6,7 +6,7 @@ import os
 import gdown
 
 # Page configuration
-st.set_page_config(page_title="Movie Recommender", layout="wide", initial_sidebar_state="auto")
+st.set_page_config(page_title="Apna Movie Recommender", layout="wide", initial_sidebar_state="auto")
 
 # File & URL setup
 file_id = "1h7GXUyodqVrJnbDOCFkJKjMFjG6bjUj7"
@@ -91,7 +91,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.title('🎬 Movie Recommendation System')
+st.title('🎬 Apna Movie Recommender ')
 
 # Movie select box
 st.markdown('<div class="custom-label">Select the movie name to recommend similar movies:</div>', unsafe_allow_html=True)
