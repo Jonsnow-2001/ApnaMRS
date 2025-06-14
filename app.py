@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import requests
 import os
+import gdown
 
 
 # Page configuration
@@ -13,14 +14,13 @@ movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
 movies_list = pd.DataFrame(movies_dict)
 # similarity=pickle.load(open('similarity.pkl','rb'))
 
-file_url = "https://drive.google.com/drive/folders/1NTKXvZOX9dFOmVVmOCJMDT4ApSmAfp6G?usp=drive_link/similarity.pkl"
+file_id = "1h7GXUyodqVrJnbDOCFkJKjMFjG6bjUj7"
+url = f"https://drive.google.com/uc?id={file_id}"
 local_path = "similarity.pkl"
 
 if not os.path.exists(local_path):
-    with open(local_path, "wb") as f:
-        f.write(requests.get(file_url).content)
+    gdown.download(url, local_path, quiet=False)
 
-# Load the file
 with open(local_path, 'rb') as f:
     similarity = pickle.load(f)
 
