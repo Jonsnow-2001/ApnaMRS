@@ -8,6 +8,8 @@ import gdown
 # Page configuration
 st.set_page_config(page_title="Apna Movie Recommender", layout="wide", initial_sidebar_state="auto")
 
+
+
 # File & URL setup
 file_id = "1h7GXUyodqVrJnbDOCFkJKjMFjG6bjUj7"
 url = f"https://drive.google.com/uc?id={file_id}"
@@ -91,15 +93,21 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.title('🎬 Apna Movie Recommender ')
+st.title('🎬 Apna Movie Recommender')
 
 # Spacer
-st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)
+st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
 
 # Movie select box
 st.markdown('<div class="custom-label">Select the movie name to recommend similar movies:</div>', unsafe_allow_html=True)
+
+# Spacer
+st.markdown("<div style='margin-top: 10px;'></div>", unsafe_allow_html=True)
+
 selected_movie_name = st.selectbox("Select a movie", movies_list['title'].values, label_visibility="collapsed")
 
+# Spacer
+st.markdown("<div style='margin-top: 10px;'></div>", unsafe_allow_html=True)
 
 # Recommend button
 if st.button("🎯 Recommend"):
