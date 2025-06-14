@@ -93,6 +93,9 @@ st.markdown("""
 # Title
 st.title('🎬 Apna Movie Recommender ')
 
+# Spacer
+st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)
+
 # Movie select box
 st.markdown('<div class="custom-label">Select the movie name to recommend similar movies:</div>', unsafe_allow_html=True)
 selected_movie_name = st.selectbox("Select a movie", movies_list['title'].values, label_visibility="collapsed")
