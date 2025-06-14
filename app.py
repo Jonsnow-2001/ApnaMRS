@@ -11,18 +11,18 @@ st.set_page_config(page_title="Movie Recommender", layout="wide", initial_sideba
 # Load data
 movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
 movies_list = pd.DataFrame(movies_dict)
-similarity=pickle.load(open('similarity.pkl','rb'))
+# similarity=pickle.load(open('similarity.pkl','rb'))
 
-# file_url = "https://drive.google.com/drive/folders/1NTKXvZOX9dFOmVVmOCJMDT4ApSmAfp6G?usp=drive_link/similarity.pkl"
-# local_path = "similarity.pkl"
+file_url = "https://drive.google.com/drive/folders/1NTKXvZOX9dFOmVVmOCJMDT4ApSmAfp6G?usp=drive_link/similarity.pkl"
+local_path = "similarity.pkl"
 
-# if not os.path.exists(local_path):
-#     with open(local_path, "wb") as f:
-#         f.write(requests.get(file_url).content)
+if not os.path.exists(local_path):
+    with open(local_path, "wb") as f:
+        f.write(requests.get(file_url).content)
 
-# # Load the file
-# with open(local_path, 'rb') as f:
-#     similarity = pickle.load(f)
+# Load the file
+with open(local_path, 'rb') as f:
+    similarity = pickle.load(f)
 
 # Fetch poster from TMDb
 def fetch_poster(movie_id):
